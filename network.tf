@@ -24,10 +24,3 @@ resource "azurerm_network_interface" "main" {
     public_ip_address_id          = azurerm_public_ip.example.id
   }
 }
-
-resource "azurerm_public_ip" "example" {
-  name                = "${var.prefix}-public-ip"
-  resource_group_name = data.azurerm_resource_group.example.name
-  location            = data.azurerm_resource_group.example.location
-  allocation_method   = "Static"
-}
